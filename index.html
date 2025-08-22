@@ -8,42 +8,134 @@
     body {
       margin: 0;
       display: grid;
-      place-items: left start;
+      place-items: start start;
       height: 100vh;
-      padding: 60px 40px 0 40px; /* top | right | bottom | left */
+      padding: 60px 40px 0 40px;
+      /* top | right | bottom | left */
       color: black;
       font-family: system-ui, sans-serif;
     }
 
+    h1 {
+      font-size: 3rem;
+      /* bigger text (default is ~2rem) */
+      font-weight: 700;
+      /* bold */
+    }
+
     a {
-    color: inherit;  /* makes the link match your page text color (#e0e0e0) */
-  }
+      color: inherit;
+      /* makes the link match your page text color (#e0e0e0) */
+      text-decoration: underline;
+      text-decoration-thickness: 1px;   /* thinner underline */
+      text-underline-offset: 3px;      /* small gap from text */
+      text-decoration-color: #bbb;     /* lighter gray instead of full black */
+}
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      /* icon + text baseline aligned */
+      gap: 0.5rem;
+      /* spacing between icon and text */
+      font-size: 1.25rem;
+      /* adjust font size */
+      font-weight: 600;
+    }
+
+    .section-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .section-title .icon {
+      width: 24px;
+      /* resize from original 78px */
+      height: 24px;
+    }
+
+    .icon {
+      width: 24px;
+      height: 24px;
+      filter: invert(57%) sepia(94%) saturate(2000%) hue-rotate(10deg) brightness(95%) contrast(90%);
+    }
+
+    .page-title {
+      font-size: 2.5rem;
+      /* size for the text */
+      font-weight: 600;
+      text-align: left;
+      /* or center, if you want it centered */
+      line-height: 1.2;
+      margin: 0;
+    }
+
+    .page-title .icon {
+      display: block;
+      /* forces it onto its own line */
+      font-size: 4rem;
+      /* make mountain bigger */
+      color: green;
+      /* mountain color */
+      margin-bottom: 0.25rem;
+      /* small gap before the text */
+    }
+
+    /* only tint the hanger <img>, not all .icon */
+    .section-link img.icon {
+      filter: invert(57%) sepia(94%) saturate(2000%) hue-rotate(10deg) brightness(95%) contrast(90%);
+    }
+
+    /* mountain styling */
+    .page-title .mountain {
+      display: block;
+      font-size: 4rem;
+      line-height: 1;
+      color: #2e7d32;
+      /* pick your green, e.g. #2e7d32 */
+      filter: none;
+      /* cancel any inherited filters */
+    }
   </style>
 </head>
+
 <body>
   <main>
+
+    <h1 class="page-title">
+      <span class="green mountain">&#x26F0;&#xFE0E;</span><br>
+      Jenna’s Tools
+    </h1>
+
+
+
+    <!-- <div class="yellow-mountain">
+    <h1 class="page-title">
+      <span class="icon">⛰</span><br>
+      Jenna’s Tools
+    </h1>
+  </div> -->
+
     <div class="container2">
-      <div class="badge"></div>
-      <h1>⛰ Jenna’s Tools</h1>
-      
-    </div>
-    <div class="container3">
-      <h3><a href="https://summer-jute-764.notion.site/Visual-Closet-255c36a01edf80e98e46ca6d5ff2c66a" target="_blank"
+      <h3 class="section-title">
+        <a class="section-link"
+          href="https://summer-jute-764.notion.site/Visual-Closet-255c36a01edf80e98e46ca6d5ff2c66a" target="_blank"
           rel="noopener noreferrer">
-          <!-- Inline hanger icon -->
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor"
-            stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <!-- hook -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none"
+            stroke="#ca8f1b" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="icon">
             <path d="M12 4c1.2 0 2 .8 2 2s-.8 2-2 2c-1.1 0-2 .9-2 2" />
-            <!-- shoulders -->
             <path d="M12 10l-8 4" />
             <path d="M12 10l8 4" />
-            <!-- bottom bar -->
             <path d="M4 18h16" />
           </svg>
-          Visual Closet</a></h3>
+          <!-- <img src="https://summer-jute-764.notion.site/icons/hanger_gray.svg?mode=light" alt="Hanger icon" class="icon"> -->
+          <p>Visual Closet</p>
+        </a>
+      </h3>
     </div>
   </main>
 
 </body>
+
 </html>
